@@ -1,3 +1,84 @@
+$size-bar: 3vh;
+$num-bars: 3;
+$anim-duration: 750ms;
+$anim-delay: calc($anim-duration/$num-bars);
+
+//   Keyframes
+
+@keyframes loadscreen {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes bars {
+    0% {
+      transform: scaleY(0.5);
+      opacity: 0.7;
+    }
+    
+    100% {
+      transform: scaleY(1.0);
+      opacity: 1;
+    }
+  }
+
+//   Keyframes
+
+
+// Loader
+.loader {
+    background: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    animation: loadscreen 1s 4s forwards;
+}
+
+.load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    width: 20vh;
+    height: 15vh;
+  
+    &__bar {
+        width: 3vh;
+        height: 100%;
+        border-radius: 20px;
+        animation: bars $anim-duration backwards infinite;
+        animation-direction: alternate;
+        @for $i from 1 through $num-bars {
+            &-#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+        }
+  
+        &--1 {
+            background: $primary-color;
+        }
+    
+        &--2 {
+            background: $secondary-color;
+        }
+    
+        &--3 {
+            background: $tertiary-color;
+        }
+    }
+}
+// Fin Loader
+
 .fa-purple {
     color: $primary-color;
 }
@@ -6,8 +87,8 @@
     @include flexbox-center;
     background-color: $grey2-bgd;
     width: 100%;
-    height: 113px;
-    gap: 17px;
+    height: 50px;
+    gap: 17px; 
 
     &__icon {
         color: $grey-font-bgd;
@@ -29,21 +110,23 @@
 .hero {
     @include flexbox-center;
     flex-direction: column;
+    text-align: center;
+    background-color: $grey3-bgd;
+
 
     &__title {
-        width: 275px;
+        // width: 275px;
         height: 68px;
-        margin: 39px 58px 0px 42px;
-        text-align: center;
+        margin-top: 39px;
+        flex-wrap: wrap;
     }
 
     &__subtitle {
         font-size: 18px;
         font-weight: 300;
-        width: 315px;
+        // width: 315px;
         height: 46px;
-        margin: 0px 26px 0px 34px;
-        text-align: center;
+        // margin: 0px 26px 0px 34px;
     }
 
     &__btn {
@@ -60,7 +143,6 @@
     background-color: $color-white;
     
     &__title {
-        width: 275px;
         height: 31px;
     }
     
@@ -70,7 +152,7 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
-        margin-left: 12.51px;
+        margin-left: 12.5px;
         }
     
     
@@ -78,13 +160,12 @@
         background-color: $grey3-bgd;
         border-radius: 20px;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        font-weight: 500;
         display: flex;
         align-items: center;
         width: 100%;
-        height: 72.379px;        
-        // box-sizing: border-box;
-        position: relative;      
+        height: 72.4px;        
+        box-sizing: border-box;
+        position: relative;    
     }  
     
     &__number {
@@ -96,27 +177,33 @@
         height: 24px;
         flex-shrink: 0;
         @include flexbox-center;
-        position: absolute;
         border-radius: 50px;
         position: absolute;
         left: -12px;
     }
-
+    
     &__icon {
         color: $grey4;
-        // width: 13.019px;
-        // height: 19.903px;
+        // font-size: 20px;
         flex-shrink: 0; 
-        position: relative;
-        left: 34.49px;
-    }
-
-    &__text {
-        position: relative;
-        left: 73.49px;
+        position: absolute;
+        left: 34.5px;
     }
     
-}    
+    &__text {
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+        position: absolute;
+        left: 73.5px;
+    }
+    
+}  
+
+.icon-purple {
+    color: $primary-color;
+}
+
 
 .restaurants {
     background-color: $grey3-bgd;
@@ -124,18 +211,15 @@
     padding-bottom: 66px;
 
     &__title {
-        // margin-top: 54px;
         margin-left: 20px;
         height: 48px;
     }
 
     &__cards {
         padding: 0px 18px 0px 17px;
-        // @include flexbox-center
         display: flex;
         flex-direction: column;
         gap: 18px;
-        // height: 440px;
         padding-left: 17px;
         padding-right: 18px;
 
@@ -174,7 +258,16 @@
             height: 174px;
             object-fit: cover;
             border-radius: 15px 15px 0 0;
+            padding: 0px 3px;
         }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        height: 77px;
+        padding: 16px 25px 12px 13px;
+        border-radius: 0 0 15px 15px;
     }
 
     &__title {
@@ -190,22 +283,12 @@
         height: 24px;
     }
 
-    &__content {
-        display: flex;
-        flex-direction: row;
-        // justify-content: space-between;
-        // align-items: center;
-        height: 77px;
-        padding: 16px 25px 12px 13px;
-        border-radius: 0 0 15px 15px;
-    }
-
     &__icon {
         width: 22px;
         flex-shrink: 0;
         position: absolute;
         right: 25px;
-        bottom: 45px;
+        top: 208px;
     }
 
 }

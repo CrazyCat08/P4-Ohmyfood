@@ -1,5 +1,5 @@
 // Appel des polices Inter, Roboto et Shrikhand
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
 
 // Colors
 $primary-color: #9356DC;
@@ -37,7 +37,6 @@ h1, h2 {
 }
 
 
-// font-family: 'Inter', sans-serif;
 // font-family: 'Shrikhand', cursive;
 
 
@@ -52,11 +51,15 @@ h1, h2 {
     color: $color-white;
     font-size: 16px;
     font-weight: 500;
-    background: linear-gradient(193deg, $primary-color -11.44%, $secondary-color 123.93%);
     border-radius: 25px;
-// background: var(--Button-Gradient, linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%));
+    background: linear-gradient(193deg, $primary-color -11.44%, $secondary-color 123.93%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     height: 50px;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, $primary-color -5.2%, $secondary-color 110.74%);
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+    }
 }
 
 .btn-heart {
@@ -67,9 +70,33 @@ h1, h2 {
     &--notliked {
         position: absolute;
     }
-}    
 
+    &--liked {
+        position: absolute;
+        background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;   
+        transform: scale(0);
+        transition: transform 350ms;
+    }
+    
+    &:hover {
+        cursor: pointer;
 
+        .btn-heart--liked {
+            transform: scale(1);
+        }
+
+        .btn-heart--notliked {
+            background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+    }
+
+}   
 
 
 // Pages

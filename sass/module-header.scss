@@ -9,9 +9,22 @@
 
     &__logo {
         width: 197px;
-        height: 36px;
+        margin: auto;
+        // height: 36px;
         padding: 0px 19px 0px 16px;
-        display: flex;
-        flex-shrink: 0;
+        position: absolute;
+        bottom: 13px;
     }
+
+    &__arrow {
+        color: $grey-font-bgd;
+        background-color: $color-white;
+        @include flexbox-center;
+        // font-size: 18px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 17px;
+        top: 17px;
+    }    
 }

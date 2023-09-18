@@ -1,11 +1,10 @@
 .footer {
-    // width: 100%;
+    width: 100%;
     padding: 22px 25px;
     background-color: $grey-font-bgd;
 
 
     & a {
-        // text-decoration: none;
         color: $color-white;
     }
 
@@ -15,7 +14,6 @@
         width: 139px;
         height: 27px;
         padding-right: 0px;
-        // justify-content: center;
         align-items: center;
     }
 
