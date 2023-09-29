@@ -153,11 +153,19 @@ $anim-delay: calc($anim-duration/$num-bars);
         flex-direction: column;
         gap: 25px;
         margin-left: 12.5px;
+
+        @include desktop-only {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         }
     
     
     &__step {
         background-color: $grey3-bgd;
+        border: 1px solid $primary-color;
         border-radius: 20px;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
         display: flex;
@@ -165,7 +173,7 @@ $anim-delay: calc($anim-duration/$num-bars);
         width: 100%;
         height: 72.4px;        
         box-sizing: border-box;
-        position: relative;    
+        position: relative;        
     }  
     
     &__number {
@@ -222,6 +230,13 @@ $anim-delay: calc($anim-duration/$num-bars);
         gap: 18px;
         padding-left: 17px;
         padding-right: 18px;
+
+        @include tablet-and-desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 50px;
+        }
 
     }
 

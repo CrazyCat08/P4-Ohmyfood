@@ -7,6 +7,10 @@
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
     position: relative;
 
+    @include tablet-and-desktop {
+        height: 96px;
+    }
+
     &__logo {
         width: 197px;
         margin: auto;
@@ -14,6 +18,12 @@
         padding: 0px 19px 0px 16px;
         position: absolute;
         bottom: 13px;
+
+        @include tablet-and-desktop {
+            width: 200px;
+            bottom: 31.8px;
+        }
+
     }
 
     &__arrow {
