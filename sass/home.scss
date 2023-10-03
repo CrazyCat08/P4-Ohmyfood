@@ -115,18 +115,26 @@ $anim-delay: calc($anim-duration/$num-bars);
 
 
     &__title {
-        // width: 275px;
         height: 68px;
         margin-top: 39px;
         flex-wrap: wrap;
+
+        @include desktop-only {
+            font-size: 40px;
+            height: 47px;
+            margin-top: 30px;
+        }
     }
 
     &__subtitle {
         font-size: 18px;
         font-weight: 300;
-        // width: 315px;
         height: 46px;
-        // margin: 0px 26px 0px 34px;
+
+        @include desktop-only {
+            margin-top: 18px;
+        }
+
     }
 
     &__btn {
@@ -135,19 +143,32 @@ $anim-delay: calc($anim-duration/$num-bars);
         width: 218px;
         margin-top: 27px;
         margin-bottom: 57px;
+
+        @include desktop-only {
+            margin-top: 18px;
+            margin-bottom: 30px;
+        }
+
     }
 }
 
 .process {
     padding: 48px 20px 68px 20px;
     background-color: $color-white;
+
+    @include desktop-only {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     &__title {
         height: 31px;
     }
     
     &__steps {
-        // width: 100%;
         margin-top: 26px;
         display: flex;
         flex-direction: column;
@@ -160,12 +181,11 @@ $anim-delay: calc($anim-duration/$num-bars);
             justify-content: space-between;
         }
 
-        }
+    }
     
     
     &__step {
         background-color: $grey3-bgd;
-        border: 1px solid $primary-color;
         border-radius: 20px;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
         display: flex;
@@ -173,8 +193,8 @@ $anim-delay: calc($anim-duration/$num-bars);
         width: 100%;
         height: 72.4px;        
         box-sizing: border-box;
-        position: relative;        
-    }  
+        position: relative;
+        }
     
     &__number {
         background-color: $primary-color;
@@ -192,7 +212,7 @@ $anim-delay: calc($anim-duration/$num-bars);
     
     &__icon {
         color: $grey4;
-        // font-size: 20px;
+        font-size: 20px;
         flex-shrink: 0; 
         position: absolute;
         left: 34.5px;
@@ -217,10 +237,22 @@ $anim-delay: calc($anim-duration/$num-bars);
     background-color: $grey3-bgd;
     padding-top: 54px;
     padding-bottom: 66px;
+    
+    @include desktop-only {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     &__title {
         margin-left: 20px;
         height: 48px;
+
+        @include desktop-only {
+            margin-left: 0px;
+        }
     }
 
     &__cards {
@@ -229,13 +261,18 @@ $anim-delay: calc($anim-duration/$num-bars);
         flex-direction: column;
         gap: 18px;
         padding-left: 17px;
-        padding-right: 18px;
+        padding-right: 17px;
 
         @include tablet-and-desktop {
+            padding: 0px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             row-gap: 50px;
+        }
+
+        @include desktop-only {
+            column-gap: 9%;
         }
 
     }

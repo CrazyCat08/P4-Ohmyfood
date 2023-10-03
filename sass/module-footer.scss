@@ -1,6 +1,19 @@
+
+#flk-1 {
+    margin-right: 4px;
+}
+
+#flk-2 {
+    margin-right: 27px;
+}
+
+#flk-3, #flk-4 {
+    width: 130px;
+}
+
+
 .footer {
     width: 100%;
-    padding: 22px 25px;
     background-color: $grey-font-bgd;
 
 
@@ -11,9 +24,9 @@
     &__logo {
         filter: invert(100%);
         display: flex;
-        width: 139px;
+        width: 100px;
         height: 27px;
-        padding-right: 0px;
+        margin-right: 39px;
         align-items: center;
     }
 
@@ -33,6 +46,7 @@
         gap: 7px;
 
         @include tablet-and-desktop {
+        // @include desktop-only {
             display: flex;
             flex-direction: row;
         }
@@ -58,11 +72,16 @@
 } 
 
 .footer-container {
+    padding: 22px 25px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    @include tablet-and-desktop {
+        @include tablet-only {
+            @include flexbox-center
+        }
+
+        @include desktop-only {
         display: flex;
         flex-direction: row-reverse;
         height: 114px;

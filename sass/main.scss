@@ -1,4 +1,4 @@
-// Appel des polices Inter, Roboto et Shrikhand
+// Appel des polices Roboto et Shrikhand
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
 
 // Colors
@@ -11,6 +11,9 @@ $grey3-bgd: #F6F6F6;
 $grey4: #7E7E7E;
 $green-font: #008766;
 $color-white: #fff;
+
+//Fonts
+$font-shrikhand: 'Shrikhand', cursive;
 
 
 * {
@@ -37,9 +40,6 @@ h1, h2 {
 }
 
 
-// font-family: 'Shrikhand', cursive;
-
-
 @mixin flexbox-center {
     display: flex;
     justify-content: center;
@@ -51,7 +51,6 @@ h1, h2 {
     color: $color-white;
     font-size: 16px;
     font-weight: 500;
-    border-radius: 25px;
     background: linear-gradient(193deg, $primary-color -11.44%, $secondary-color 123.93%);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     height: 50px;
@@ -59,6 +58,12 @@ h1, h2 {
     &:hover {
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, $primary-color -5.2%, $secondary-color 110.74%);
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
     }
 }
 
@@ -85,26 +90,32 @@ h1, h2 {
 
     &--liked {
         position: absolute;
+        // Use the text as a mask for the background.
+        // This will show the gradient as a text color rather than element background
         background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
         background-clip: text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;   
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;   
         transform: scale(0);
-        transition: transform 350ms;
+        transition: transform 1s;
     }
     
     &:hover {
         cursor: pointer;
-
+        
         .btn-heart--liked {
             transform: scale(1);
         }
-
+        
         .btn-heart--notliked {
             background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
             background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+            -webkit-text-fill-color: transparent;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
         }
     }
 
@@ -113,7 +124,7 @@ h1, h2 {
 
 // Pages
 @import 'home.scss';
-// @import 'menu.scss';
+@import 'menu.scss';
 
 // Modules
 @import 'module-header.scss';
