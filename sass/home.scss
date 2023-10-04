@@ -1,11 +1,11 @@
-$size-bar: 3vh;
+$size: 3vh;
 $num-bars: 3;
-$anim-duration: 750ms;
+$anim-duration: 600ms;
 $anim-delay: calc($anim-duration/$num-bars);
 
 //   Keyframes
 
-@keyframes loadscreen {
+@keyframes loader {
     from {
         opacity: 1;
     }
@@ -19,12 +19,10 @@ $anim-delay: calc($anim-duration/$num-bars);
 @keyframes bars {
     0% {
       transform: scaleY(0.5);
-      opacity: 0.7;
     }
     
     100% {
       transform: scaleY(1.0);
-      opacity: 1;
     }
   }
 
@@ -33,47 +31,46 @@ $anim-delay: calc($anim-duration/$num-bars);
 
 // Loader
 .loader {
-    background: rgba(255, 255, 255, 0.85);
+    background-color: $grey2-bgd;
     position: fixed;
     top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    z-index: 100;
-    animation: loadscreen 1s 4s forwards;
+    z-index: 1;
+    animation: loader 1s 2s forwards;
 }
 
 .load {
+    width: $size*5;
+    height: $size*8;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-around;
-    width: 20vh;
-    height: 15vh;
+    justify-content: space-evenly;
   
     &__bar {
-        width: 3vh;
         height: 100%;
-        border-radius: 20px;
-        animation: bars $anim-duration backwards infinite;
-        animation-direction: alternate;
+        width: $size;
+        animation: bars $anim-duration backwards infinite ease-in-out alternate;
         @for $i from 1 through $num-bars {
-            &-#{$i} {
+            &--#{$i} {
                 animation-delay: $anim-delay * $i;
             }
         }
   
         &--1 {
-            background: $primary-color;
+            background-color: $primary-color;
         }
     
         &--2 {
-            background: $secondary-color;
+            background-color: $secondary-color;
         }
     
         &--3 {
-            background: $tertiary-color;
+            background-color: $tertiary-color;
         }
     }
 }

@@ -58,7 +58,7 @@ h1, h2 {
   -moz-text-fill-color: transparent;
 }
 
-@keyframes loadscreen {
+@keyframes loader {
   from {
     opacity: 1;
   }
@@ -70,57 +70,54 @@ h1, h2 {
 @keyframes bars {
   0% {
     transform: scaleY(0.5);
-    opacity: 0.7;
   }
   100% {
     transform: scaleY(1);
-    opacity: 1;
   }
 }
 .loader {
-  background: rgba(255, 255, 255, 0.85);
+  background-color: #EAEAEA;
   position: fixed;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
-  z-index: 100;
-  animation: loadscreen 1s 4s forwards;
+  z-index: 1;
+  animation: loader 1s 2s forwards;
 }
 
 .load {
+  width: 15vh;
+  height: 24vh;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-around;
-  width: 20vh;
-  height: 15vh;
+  justify-content: space-evenly;
 }
 .load__bar {
-  width: 3vh;
   height: 100%;
-  border-radius: 20px;
-  animation: bars 750ms backwards infinite;
-  animation-direction: alternate;
-}
-.load__bar-1 {
-  animation-delay: 250ms;
-}
-.load__bar-2 {
-  animation-delay: 500ms;
-}
-.load__bar-3 {
-  animation-delay: 750ms;
+  width: 3vh;
+  animation: bars 600ms backwards infinite ease-in-out alternate;
 }
 .load__bar--1 {
-  background: #9356DC;
+  animation-delay: 200ms;
 }
 .load__bar--2 {
-  background: #FF79DA;
+  animation-delay: 400ms;
 }
 .load__bar--3 {
-  background: #99E2D0;
+  animation-delay: 600ms;
+}
+.load__bar--1 {
+  background-color: #9356DC;
+}
+.load__bar--2 {
+  background-color: #FF79DA;
+}
+.load__bar--3 {
+  background-color: #99E2D0;
 }
 
 .fa-purple {
@@ -395,6 +392,16 @@ h1, h2 {
   width: 100%;
 }
 
+@keyframes menu-appear {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 .menu-banner img {
   width: 100%;
   height: 275px;
@@ -501,6 +508,19 @@ h1, h2 {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
+  animation: menu-appear 1000ms ease both;
+}
+.menu__card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.menu__card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.menu__card:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.menu__card:nth-child(4) {
+  animation-delay: 1.2s;
 }
 .menu__card__dish {
   display: flex;

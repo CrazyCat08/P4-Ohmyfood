@@ -1,3 +1,22 @@
+@keyframes menu-appear{    
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@mixin menu-delay {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.3}s;
+        }
+    }
+}
 
 .menu-banner {
     & img {
@@ -110,7 +129,9 @@
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
     overflow: hidden;
     position: relative;
-    // animation à rajouter pour faire apparaître progressivement la carte
+    // animation pour faire apparaître progressivement les plats
+    animation: menu-appear 1000ms ease both;
+    @include menu-delay;
 
     
     &__dish {
