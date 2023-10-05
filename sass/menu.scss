@@ -11,7 +11,7 @@
 }
 
 @mixin menu-delay {
-    @for $i from 1 through 4 {
+    @for $i from 1 through 99 {
         &:nth-child(#{$i}) {
             animation-delay: #{$i * 0.3}s;
         }
