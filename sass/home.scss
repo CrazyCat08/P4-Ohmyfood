@@ -28,6 +28,9 @@ $anim-delay: calc($anim-duration/$num-bars);
 
 //   Keyframes
 
+main {
+    background-color: $grey3-bgd;
+}
 
 // Loader
 .loader {
@@ -156,9 +159,9 @@ $anim-delay: calc($anim-duration/$num-bars);
     @include desktop-only {
         padding-top: 50px;
         padding-bottom: 50px;
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        padding-left: 12.5%;
+        padding-right: 12.5%;
     }
     
     &__title {
@@ -236,11 +239,11 @@ $anim-delay: calc($anim-duration/$num-bars);
     padding-bottom: 66px;
     
     @include desktop-only {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 100%;
+        padding-left: 12.5%;
+        padding-right: 12.5%;
     }
 
     &__title {
@@ -253,7 +256,7 @@ $anim-delay: calc($anim-duration/$num-bars);
     }
 
     &__cards {
-        padding: 0px 18px 0px 17px;
+        padding: 0px 17px 0px 17px;
         display: flex;
         flex-direction: column;
         gap: 18px;
@@ -307,7 +310,6 @@ $anim-delay: calc($anim-duration/$num-bars);
             height: 174px;
             object-fit: cover;
             border-radius: 15px 15px 0 0;
-            padding: 0px 3px;
         }
     }
 

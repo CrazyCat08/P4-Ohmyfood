@@ -7,8 +7,15 @@
     margin-right: 27px;
 }
 
-#flk-3, #flk-4 {
+#flk-3 {
     width: 130px;
+}
+
+#flk-4 {
+    width: 130px;
+    @include tablet-only {
+        width: 56px;
+    }
 }
 
 
@@ -26,8 +33,11 @@
         display: flex;
         width: 100px;
         height: 27px;
-        margin-right: 39px;
+        // margin-right: 39px;
         align-items: center;
+        @include desktop-only {
+            margin-right: 39px;
+        }    
     }
 
     &__icon {

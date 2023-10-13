@@ -18,6 +18,10 @@
     }
 }
 
+main {
+    background-color: $color-white;
+}
+
 .menu-banner {
     & img {
         width: 100%;
@@ -32,7 +36,7 @@
 
 .menu {
     background-color: $grey3-bgd;
-    padding: 32px 17px 40px 17px;
+    padding: 32px 17px 0px 17px;
     border-radius: 40px 40px 0 0;
     position: relative;
     margin-top: -55px;
@@ -87,7 +91,8 @@
     
     &__cta {
         @include flexbox-center;
-        margin-bottom: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
 }
@@ -106,7 +111,7 @@
     &::after {
         content: "";
         position: absolute;
-        top: 24px;
+        top: 27px;
         left: 0;
         width: 40px;
         height: 3px;
@@ -118,9 +123,9 @@
 
 .menu__card {
     background-color: $color-white;
-    padding: 15px;
+    padding: 13.5px 15px;
     width: 100%;
-    height: 79px;
+    height: 69px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -157,6 +162,7 @@
     &__subtitle {
         font-size: 15px;
         font-weight: 300;
+        height: 19px;
     }
 
     &__price {
@@ -171,8 +177,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 69px;
-        height: 79px;
+        width: 59px;
+        height: 69px;
         flex-shrink: 0;
         background-color: $tertiary-color;
         border-radius: 0 15px 15px 0;
@@ -180,7 +186,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        transform: translateX(69px);
+        transform: translateX(59px);
         transition: .7s ease-in-out;
         
     }
@@ -195,7 +201,7 @@
         cursor: pointer;
 
         .menu__card__price {
-            margin-right: 69px;
+            margin-right: 59px;
         }
 
         .menu__card__order {
