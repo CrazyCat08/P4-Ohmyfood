@@ -264,14 +264,14 @@ main {
         padding-right: 17px;
 
         @include tablet-and-desktop {
-            padding: 0px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             row-gap: 50px;
         }
-
+        
         @include desktop-only {
+            padding: 0px;
             column-gap: 9%;
         }
 
